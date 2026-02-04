@@ -9,7 +9,8 @@ IMPORTANT: Only use this on systems you have explicit authorization to test.
 
 from pentest_redteam import RedTeamAssistant
 
-# Replace with your actual API key
+# IMPORTANT: Replace with your actual API key from https://nofiltergpt.com
+# This placeholder will not work - you must use your own API key
 API_KEY = 'YOUR_API_KEY'
 
 def print_section(title):
@@ -19,6 +20,21 @@ def print_section(title):
     print("=" * 80 + "\n")
 
 def main():
+    # Validate API key before proceeding
+    if API_KEY == 'YOUR_API_KEY' or not API_KEY or len(API_KEY) < 10:
+        print("=" * 80)
+        print("ERROR: Invalid API Key")
+        print("=" * 80)
+        print("\nYou must replace 'YOUR_API_KEY' with your actual NoFilterGPT API key.")
+        print("\nTo get your API key:")
+        print("1. Visit https://nofiltergpt.com")
+        print("2. Log in to your account")
+        print("3. Go to Settings > Developers")
+        print("4. Generate your API key")
+        print("5. Replace 'YOUR_API_KEY' in this file with your actual key")
+        print("\n" + "=" * 80)
+        return
+    
     # Initialize the Red Team Assistant
     assistant = RedTeamAssistant(API_KEY)
     
