@@ -165,6 +165,26 @@ Make custom queries with specified AI expertise.
 - `query` (str): Your question or request
 - `system_role` (str): The expertise role for the AI
 
+## Interactive Demo
+
+For a hands-on experience with all red team functions, run the interactive demo:
+
+```bash
+# Set your API key as an environment variable (recommended)
+export NOFILTERGPT_API_KEY='your_api_key_here'
+
+# Run the interactive demo
+python interactive_demo.py
+```
+
+The interactive demo provides a menu-driven interface to test all penetration testing functions.
+
+## Additional Resources
+
+- **`REDTEAM_GUIDE.md`**: Quick reference guide for all functions
+- **`test_pentest_redteam.py`**: Unit tests demonstrating module functionality
+- **Example scripts**: Multiple examples for different use cases
+
 ## How to Use the NoFilterGPT API (Direct API Calls)
 
 For those who want to make direct API calls without using the Red Team module, here's how to use the base API.
