@@ -11,6 +11,26 @@ Once you have your API key, you're ready to make requests to the NoFilterGPT API
 
 ## How to Use the NoFilterGPT API
 
+### Endpoint: `/v1/subscription/status`
+
+Check your subscription status using the subscription endpoint:
+
+```
+https://api.nofiltergpt.com/v1/subscription/status
+```
+
+This endpoint expects a **GET** request with your API key in the query string.
+
+#### Example Usage with `check_subscription.py`
+
+The file `check_subscription.py` demonstrates how to check your subscription status:
+
+```bash
+python check_subscription.py
+```
+
+This will display whether you have an active subscription, your plan details, and expiration date if applicable.
+
 ### Endpoint: `/v1/chat/completions`
 
 The NoFilterGPT API's primary endpoint for generating AI-based chat completions is:
