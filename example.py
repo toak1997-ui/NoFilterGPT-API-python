@@ -26,23 +26,6 @@ response = requests.post(url, headers=headers, data=json.dumps(data))
 
 if response.status_code != 200:
     print(f"Error: {response.status_code}")
+    print(f"Response: {response.text}")
 else:
     print(response.json())
-
-
-### Handling Responses
-
-The API response will include a generated completion (i.e., a response from the assistant) and any additional data. Handle error responses with appropriate HTTP status codes.
-
-### Error Handling
-
-- **400 Bad Request**: One or more required parameters are missing.
-- **401 Unauthorized**: Invalid or missing API key.
-
-## Contributing
-
-If you would like to contribute or have suggestions for improvements, feel free to create an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
