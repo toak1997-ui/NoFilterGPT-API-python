@@ -3,13 +3,171 @@
 
 The NoFilterGPT API for Python allows developers to easily integrate the power of the NoFilterGPT AI model into their Python applications. With a simple POST request, you can generate dynamic responses from the AI, fine-tuning parameters such as temperature, token limit, and more.
 
+## 🔴 Red Team & Penetration Testing Module
+
+This repository now includes a specialized module for **penetration testing and red team operations**. The `pentest_redteam.py` module provides AI-assisted capabilities for security assessments, including:
+
+- 🔍 **Reconnaissance**: OSINT, network discovery, and information gathering
+- 🛡️ **Vulnerability Analysis**: Service analysis, CVE research, and security assessment
+- 💥 **Exploit Development**: PoC creation and exploitation guidance
+- 🔐 **Privilege Escalation**: System-specific escalation techniques
+- 🌐 **Web Application Testing**: OWASP Top 10 and beyond
+- 🔑 **Password Attacks**: Hash cracking and credential testing strategies
+- 🔄 **Network Pivoting**: Lateral movement and post-exploitation
+- 📊 **Report Generation**: Professional penetration testing reports
+
+### ⚠️ IMPORTANT SECURITY DISCLAIMER
+
+**This tool is intended for AUTHORIZED security testing ONLY.** 
+
+- ✅ Only use on systems you have explicit written permission to test
+- ✅ Follow responsible disclosure practices
+- ✅ Comply with all applicable laws and regulations
+- ❌ Unauthorized access to computer systems is illegal
+- ❌ Misuse of these tools can result in criminal prosecution
+
+By using this module, you agree to use it ethically and legally.
+
 ## Getting Your API Key
 
 To start using the NoFilterGPT API, you will need an API key. Simply log into your account at [nofiltergpt.com](https://nofiltergpt.com), navigate to the **"Settings"** page, click on the **"Developers"** tab, and generate your API key. It's simple and fast!
 
 Once you have your API key, you're ready to make requests to the NoFilterGPT API and build engaging applications.
 
-## How to Use the NoFilterGPT API
+## Quick Start - Red Team Module
+
+### Installation
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Basic Usage
+
+```python
+from pentest_redteam import RedTeamAssistant
+
+# Initialize with your API key
+assistant = RedTeamAssistant('YOUR_API_KEY')
+
+# Perform reconnaissance
+result = assistant.reconnaissance(
+    target_info="example.com",
+    recon_type="general"
+)
+print(result)
+
+# Analyze vulnerabilities
+result = assistant.vulnerability_analysis(
+    service_info="Apache HTTP Server",
+    version_info="2.4.41"
+)
+print(result)
+
+# Get web application testing guidance
+result = assistant.web_application_testing(
+    application_info="E-commerce web application",
+    vulnerabilities_to_test=["SQL Injection", "XSS", "CSRF"]
+)
+print(result)
+```
+
+### Example Scripts
+
+The repository includes several example scripts:
+
+- **`example_reconnaissance.py`**: Demonstrates various reconnaissance techniques
+- **`example_vulnerability_analysis.py`**: Shows vulnerability analysis workflows
+- **`example_privilege_escalation.py`**: Covers privilege escalation strategies
+- **`example_complete_assessment.py`**: Complete penetration testing workflow
+
+To run an example:
+
+```bash
+# Edit the file to add your API key
+nano example_reconnaissance.py
+
+# Run the example
+python example_reconnaissance.py
+```
+
+## Available Red Team Functions
+
+### `reconnaissance(target_info, recon_type="general")`
+Get AI-assisted reconnaissance strategies for your target.
+
+**Parameters:**
+- `target_info` (str): Target information (domain, IP, organization)
+- `recon_type` (str): Type of recon - "general", "network", "web", or "osint"
+
+### `vulnerability_analysis(service_info, version_info="")`
+Analyze services and applications for potential vulnerabilities.
+
+**Parameters:**
+- `service_info` (str): Service or application description
+- `version_info` (str): Version information if available
+
+### `exploit_development(vulnerability_description, target_environment="")`
+Get guidance on developing exploits and proof-of-concepts.
+
+**Parameters:**
+- `vulnerability_description` (str): Description of the vulnerability
+- `target_environment` (str): Target environment details
+
+### `privilege_escalation(system_info, current_access="")`
+Get privilege escalation techniques for various systems.
+
+**Parameters:**
+- `system_info` (str): Target system information
+- `current_access` (str): Current access level description
+
+### `web_application_testing(application_info, vulnerabilities_to_test=None)`
+Get web application testing strategies and methodologies.
+
+**Parameters:**
+- `application_info` (str): Application description
+- `vulnerabilities_to_test` (List[str]): Specific vulnerabilities to test for
+
+### `password_attack(target_type, hash_info="")`
+Get password attack strategies and recommendations.
+
+**Parameters:**
+- `target_type` (str): Type of password attack
+- `hash_info` (str): Hash type or password policy information
+
+### `network_pivoting(network_info, access_point="")`
+Get network pivoting and lateral movement strategies.
+
+**Parameters:**
+- `network_info` (str): Target network information
+- `access_point` (str): Initial access point description
+
+### `social_engineering(scenario, target_profile="")`
+Generate social engineering scenarios and strategies.
+
+**Parameters:**
+- `scenario` (str): Social engineering scenario description
+- `target_profile` (str): Target organization/individual information
+
+### `generate_report(findings, engagement_info="")`
+Generate penetration testing report structure and content.
+
+**Parameters:**
+- `findings` (List[str]): List of security findings
+- `engagement_info` (str): Engagement description
+
+### `custom_query(query, system_role="penetration testing expert")`
+Make custom queries with specified AI expertise.
+
+**Parameters:**
+- `query` (str): Your question or request
+- `system_role` (str): The expertise role for the AI
+
+## How to Use the NoFilterGPT API (Direct API Calls)
+
+For those who want to make direct API calls without using the Red Team module, here's how to use the base API.
 
 ### Endpoint: `/v1/chat/completions`
 
